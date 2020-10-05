@@ -1,0 +1,16 @@
+namespace TownInfo
+{
+    using System;
+
+    public class Program
+    {
+        public static void Main()
+        {
+            string town = Console.ReadLine();
+            int pop = int.Parse(Console.ReadLine());
+            int area = int.Parse(Console.ReadLine());
+
+            Console.WriteLine($"Town {town} has population of {population} and area {area} square km.");
+        }
+    }
+}
