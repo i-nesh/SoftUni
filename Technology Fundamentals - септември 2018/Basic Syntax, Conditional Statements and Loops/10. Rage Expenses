@@ -1,0 +1,29 @@
+using System;
+
+namespace rage_expenses
+{
+    class Program
+    {
+        static void Main()
+        {
+            int lostGames = int.Parse(Console.ReadLine());
+            float headsetPrice = float.Parse(Console.ReadLine());
+            float mousePrice = float.Parse(Console.ReadLine());
+            float keyboardPrice = float.Parse(Console.ReadLine());
+            float displayPrice = float.Parse(Console.ReadLine());
+
+            int brokeHeadset = 0;
+            int brokeMouse = 0;
+            int brokeKeyboard = 0;
+            int brokeDisplay = 0;
+
+            brokeHeadset = lostGames / 2;
+            brokeMouse = lostGames / 3;
+            brokeKeyboard = lostGames / 6;
+            brokeDisplay = lostGames / 12;
+
+            double expenses = (brokeHeadset * headsetPrice) + (brokeMouse * mousePrice) + (brokeKeyboard * keyboardPrice) + (brokeDisplay * displayPrice);
+            Console.WriteLine($"Rage expenses: {expenses:F2} lv.");
+        }
+    }
+}
