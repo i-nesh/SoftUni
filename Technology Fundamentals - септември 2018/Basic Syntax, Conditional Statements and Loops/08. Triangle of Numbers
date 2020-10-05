@@ -1,0 +1,22 @@
+using System;
+
+namespace triangle_of_numbers
+{
+    class Program
+    {
+        static void Main()
+        {
+            int number = int.Parse(Console.ReadLine());
+            int output = 1;
+            for (int col = 1; col <= number; col++)
+            {
+                for (int row = 1; row < col; row++)
+                {
+                    Console.Write(output + " ");
+                }
+                Console.WriteLine(output + " ");
+                output++;
+            }
+        }
+    }
+}
