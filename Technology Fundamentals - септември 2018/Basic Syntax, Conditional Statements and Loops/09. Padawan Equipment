@@ -1,0 +1,35 @@
+using System;
+
+namespace padawan
+{
+    class Program
+    {
+        static void Main()
+        {
+            decimal totalMoney = decimal.Parse(Console.ReadLine());
+            int studentsCount = int.Parse(Console.ReadLine());
+
+            decimal lightsaberPrice = decimal.Parse(Console.ReadLine());
+            decimal robePrice = decimal.Parse(Console.ReadLine());
+            decimal beltPrice = decimal.Parse(Console.ReadLine());
+
+            decimal totalPriceSabers = lightsaberPrice * (Math.Ceiling(studentsCount * 1.1m));
+            decimal totalRobePrice = robePrice * studentsCount;
+
+            int beltsLeft = studentsCount % 6;
+            int beltsCount = studentsCount / 6 * 5 + beltsLeft;
+
+            decimal totalPriceBelts = beltsCount * beltPrice;
+
+            decimal totalMoneySpent = totalPriceBelts + totalPriceSabers + totalRobePrice ;
+            if(totalMoneySpent <= totalMoney)
+            {
+                Console.WriteLine($"The money is enough - it would cost {totalMoneySpent:f2}lv.");
+            }
+            else
+            {
+                Console.WriteLine($"Ivan Cho will need {totalMoneySpent - totalMoney:f2}lv more.");
+            }
+        }
+    }
+}
