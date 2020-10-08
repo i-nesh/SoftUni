@@ -1,0 +1,33 @@
+namespace _04._Array_Rotation
+{
+    using System;
+    
+    class Program
+    {
+        static void Main()
+        {
+
+            string[] numbersAsString = Console.ReadLine().Split();
+            int[] numbers = new int[numbersAsString.Length];
+
+            for (int i = 0; i < numbersAsString.Length; i++)
+            {
+                numbers[i] = int.Parse(numbersAsString[i]);
+            }
+
+            int rotations = int.Parse(Console.ReadLine());
+
+            for (int i = 0; i < rotations; i++)
+            {
+                int firstNumber = numbers[0];
+
+                for (int j = 0; j < numbers.Length-1; j++)
+                {
+                    numbers[j] = numbers[j + 1];
+                }
+                numbers[numbers.Length - 1] = firstNumber;
+            }
+            Console.WriteLine(string.Join(" ", numbers));
+        }
+    }
+}
