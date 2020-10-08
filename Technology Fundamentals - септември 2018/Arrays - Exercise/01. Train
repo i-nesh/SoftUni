@@ -1,4 +1,4 @@
-namespace _01_Trains
+namespace _01_Train
 {
   using System;
   using System.Linq;  
