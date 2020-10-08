@@ -8,9 +8,9 @@ namespace _07.Max_Sequence_of_Equal_Elements
         static void Main()
         {
             int[] array = Console.ReadLine()
-                    .Split(' ')
-                    .Select(int.Parse)
-                    .ToArray();
+                .Split(' ')
+                .Select(int.Parse)
+                .ToArray();
                     
             int longestSeqLength = 1;
             int longestSeqStart = 0;
