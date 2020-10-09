@@ -1,0 +1,29 @@
+namespace _05._Add_subtract
+{
+    using System;
+
+    class Program
+    {
+
+        public static void Main()
+        {
+            int firstInt = int.Parse(Console.ReadLine());
+            int secondInt = int.Parse(Console.ReadLine());
+            int thirdInt = int.Parse(Console.ReadLine());
+
+            int sum = Sum(firstInt, secondInt);
+            int result = Subtract(thirdInt, sum);
+            Console.WriteLine(result);
+        }
+        
+        public static int Sum(int num1, int num2)
+        {
+            return num1 + num2;
+        }
+        
+        public static int Subtract(int num3, int sum)
+        {
+            return sum - num3;
+        }
+    }
+}
