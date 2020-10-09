@@ -1,0 +1,51 @@
+namespace _07.Order
+{
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    
+    public class Program
+    {   
+        public static void Main()
+        {
+            List<Student> students = new List<Student>();
+
+            while (true)
+            {
+                string input = Console.ReadLine();
+
+                if (input  == "End")
+                {
+                    break;
+                }
+
+                string[] tokens = input.Split();
+
+                string name = tokens[0];
+                string id = tokens[1];
+                int age = int.Parse(tokens[2]);
+
+                Student student = new Student()
+                {
+                    Name = name,
+                    ID = id,
+                    Age = age
+                };
+                students.Add(student);
+            }
+
+            foreach (var student in students.OrderBy(x=> x.Age))
+            {
+                Console.WriteLine($"{student.Name} with ID: {student.ID} is {student.Age} years old.");
+            }
+        }
+        
+    }
+    
+    private class Student
+    {
+        public string Name  { get; set; }
+        public string ID { get; set; }
+        public int Age { get; set; }
+    }
+}
