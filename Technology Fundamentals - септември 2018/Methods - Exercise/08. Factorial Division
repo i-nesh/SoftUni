@@ -1,0 +1,31 @@
+namespace _08.Factorial_Division
+{
+    using System;
+
+    class Program
+    {
+        static void Main()
+        {
+            int numberInt = int.Parse(Console.ReadLine());
+            int secondnumberInt = int.Parse(Console.ReadLine());
+            
+            double result = Factorial(numberInt);
+            double secondResult = Factorial(secondnumberInt);
+            double finalResult = result / secondResult;
+
+            Console.WriteLine($"{finalResult:F2}");
+
+        }
+        
+        private static double Factorial(int number)
+        {
+            double result = 1.0;
+            for (int i = 1; i <= number; i++)
+            {
+                result = result * i;
+            }
+            
+            return result;
+        }
+    }
+}
