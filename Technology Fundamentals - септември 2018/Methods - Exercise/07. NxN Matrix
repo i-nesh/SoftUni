@@ -1,0 +1,20 @@
+namespace matrix
+{
+    using System;
+
+    class Program
+    {
+        static void Main()
+        {
+            int sizeMatrix = int.Parse(Console.ReadLine());
+            for (int i = 0; i < sizeMatrix; i++)
+            {
+                for (int j = 0; j < sizeMatrix; j++)
+                {
+                    Console.Write(sizeMatrix + " ");
+                }
+                Console.WriteLine();
+            }
+        }
+    }
+}
