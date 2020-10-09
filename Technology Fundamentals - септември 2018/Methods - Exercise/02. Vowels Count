@@ -1,0 +1,30 @@
+namespace _02._vowels_count
+{
+    using System;
+
+    class Program
+    {
+        static void Main()
+        {
+            Console.WriteLine(Vowels());
+        }
+
+        public static string Vowels()
+        {
+            string text = Console.ReadLine().ToLower();
+            string emptyText = string.Empty;
+            int vowelsCount = 0;
+
+            for (int i = 0; i < text.Length; i++)
+            {
+                emptyText += text[i];
+                if (emptyText == "a" || emptyText == "e" || emptyText == "o" || emptyText == "u" || emptyText == "i" || emptyText == "y")
+                {
+                    vowelsCount++;
+                }
+                emptyText = string.Empty;
+            }
+            return vowelsCount.ToString();
+        }
+    }
+}
