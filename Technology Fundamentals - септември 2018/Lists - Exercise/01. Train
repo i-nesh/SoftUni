@@ -1,0 +1,43 @@
+namespace _01_trains
+{
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
+    class Program
+    {
+        static void Main()
+        {
+            List<int> wagonsList = Console.ReadLine()
+                .Split(' ')
+                .Select(int.Parse)
+                .ToList();
+
+            int maxCapacity = int.Parse(Console.ReadLine());
+            string command;
+
+            while ((command = Console.ReadLine()) != "end")
+            {
+                string[] tokens = command.Split();
+
+                if (tokens[0] == "Add")
+                {
+                    wagonsList.Add(int.Parse(tokens[1]));
+                }
+                else
+                {
+                    for (int i = 0; i < wagonsList.Count; i++)
+                    {
+                        if ((int.Parse(tokens[0])) + wagonsList[i] <= maxCapacity)
+                        {
+                            wagonsList[i] += int.Parse(tokens[0]);
+                            break;
+                        }
+                    }
+                }
+            }
+            
+            Console.WriteLine(string.Join(" ", wagonsList));
+        }
+    }
+}
