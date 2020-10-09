@@ -1,0 +1,34 @@
+namespace _06._Middle_characters
+{
+    using System;
+    using System.Linq;
+    using System.Text;
+
+    class Program
+    {
+        public static void Main()
+        {
+            string input = Console.ReadLine();
+            string result = PrintMiddleCharacter(input);
+            Console.WriteLine(result);
+        }
+        public static string PrintMiddleCharacter(string text)
+        {
+            string output = string.Empty;
+            
+            if (text.Length % 2 == 0)
+            {
+                int n = (text.Length - 2) / 2;
+                string result = text.Substring(n, text.Length - n);
+                output = result.Substring(0, 2);
+            }
+            else
+            {
+                int n = (text.Length / 2);
+                string result = text.Substring(n, text.Length - n);
+                output = result.Substring(0, 1);
+            }
+            return output;
+        }
+    }
+}
