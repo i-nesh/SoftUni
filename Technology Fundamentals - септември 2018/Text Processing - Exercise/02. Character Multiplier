@@ -1,4 +1,4 @@
-namespace _02.Strings_And_Text_Processing_Character_multiplier
+namespace _02_Strings_And_Text_Processing_Character_Multiplier
 {
     using System;
     using System.Linq;
