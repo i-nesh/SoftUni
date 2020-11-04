@@ -1,0 +1,46 @@
+namespace _02.Strings_And_Text_Processing_Character_multiplier
+{
+    using System;
+    using System.Linq;
+
+    class Program
+    {
+        static void Main()
+        {
+           
+            string[] input = Console.ReadLine()
+                .Split()
+                .ToArray();
+ 
+            int mutualLenght = Math.Min(input[0].Length, input[1].Length);
+ 
+            string firstWord = input[0];
+            string secondWord = input[1];
+ 
+            int sum = 0;
+ 
+            for (int i = 0; i < mutualLenght; i++)
+            {
+                sum += (int)firstWord[i] * (int)secondWord[i];
+            }
+ 
+            if (firstWord.Length > secondWord.Length)
+            {
+                for (int i = mutualLenght; i < firstWord.Length; i++)
+                {
+                    sum += (int)firstWord[i];
+                }
+            }
+ 
+            else
+            {
+                for (int i = mutualLenght; i < secondWord.Length; i++)
+                {
+                    sum += (int)secondWord[i];
+                }
+            }
+ 
+            Console.WriteLine(sum);
+        }
+    }
+}
