@@ -1,0 +1,33 @@
+namespace _06_Replace_Repeating_Char
+{
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
+    class Program
+    {
+        static void Main()
+        {
+            List<char> input = Console.ReadLine()
+                .ToList();
+            List<char> result = new List<char>();
+            result.Add(input[0]);
+            
+            for (int i = 1; i < input.Count; i++)
+            {
+                char currentElement = input[i];
+                char previousElement = input[i - 1];
+                
+                if (currentElement == previousElement)
+                {
+                    continue;
+                }
+                else
+                {
+                    result.Add(currentElement);
+                }
+            }
+            Console.WriteLine(string.Join("", result));
+        }
+    }
+}
