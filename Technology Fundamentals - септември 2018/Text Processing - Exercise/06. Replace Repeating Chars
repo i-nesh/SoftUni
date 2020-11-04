@@ -1,4 +1,4 @@
-namespace _06_Replace_Repeating_Char
+namespace _06_Replace_Repeating_Chars
 {
     using System;
     using System.Collections.Generic;
