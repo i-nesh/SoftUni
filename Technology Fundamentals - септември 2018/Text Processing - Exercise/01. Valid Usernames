@@ -1,0 +1,53 @@
+namespace _01_valid_usernames
+{
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
+    class Program
+    {
+        static void Main()
+        {
+            List<string> usernames = Console.ReadLine()
+                .Split(", ")
+                .ToList();
+
+            List<string> validUsernames = new List<string>();
+
+            for (int i = 0; i < usernames.Count; i++)
+            {
+                string username = usernames[i];
+
+                if (usernames[i].Length >= 3 && usernames[i].Length <= 16)
+                {
+                    bool validateContent = validateUsernameContent(username);
+
+                    if (validateContent)
+                    {
+                        validUsernames.Add(username);
+                    }
+                }
+            }
+            foreach (var username in validUsernames)
+            {
+                Console.WriteLine(username);
+            }
+        }
+
+        private static bool validateUsernameContent(string username)
+        {
+            foreach (var symbol in username)
+            {
+                if (char.IsLetterOrDigit(symbol) || symbol == '_' || symbol == '-')
+                {
+                    continue;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
+}
