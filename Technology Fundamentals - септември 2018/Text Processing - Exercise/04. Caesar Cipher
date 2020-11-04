@@ -1,0 +1,29 @@
+namespace _04_caesar_cipher
+{
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
+    class Program
+    {
+        static void Main()
+        {
+            List<char> result = new List<char>();
+
+            char[] input = Console.ReadLine().ToArray();
+
+            for (int i = 0; i < input.Length; i++)
+            {
+                int currentChar = input[i];
+                int updatedChar = currentChar + 3;
+                char c = (char)updatedChar;
+                result.Add(c);
+            }
+            
+            foreach (var x in result)
+            {
+                Console.Write(string.Join("", x));
+            }
+        }
+    }
+}
